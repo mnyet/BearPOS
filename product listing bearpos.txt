@@ -1,0 +1,25 @@
+abc000 pancit canton chilimansi - 16
+abc000 pancit canton spicy - 16
+abc000 century tuna can - 38
+abc001 colgate toothpaste sachet - 20
+abc002 magic sarap 1 pack - 50
+abc003 knorr cubes 1 pack - 50
+abc004 vitamilk 550ml - 30
+abc005 tender juicy hotdog - 125
+abc006 palmolive pink - 66
+abc007 head and shoulder - 65
+abc008 axe gold 50ml - 95
+abc009 dr wong sulfur soap - 45
+abc010 safeguard small - 16
+abc011 dove men shampoo - 66
+abc012 mashwouth - 56
+abc013 johnson baby powder pink small - 20
+abc014 johnson baby powder pink medium - 39
+abc015 celeteque moisturizer bottle - 126
+wilkins 7 liter - 95
+absolute 7 liter - 96
+polident - 125
+pampers small by 4s - 45
+dental floss - 45
+albatross - 30
+

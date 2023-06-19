@@ -1,0 +1,74 @@
+//query for product listing
+
+> create database
+CREATE DATABASE db_BearPOS;
+
+> create table
+//product list
+CREATE TABLE tbl_productList(id int primary key AUTO_INCREMENT,
+                         productID varchar(60),
+                         productName varchar(100),
+                         price varchar(60));
+
+//cashier list
+CREATE TABLE tbl_cashierList(id int primary key AUTO_INCREMENT,
+                         cashierName varchar(60),
+                         registrationDate varchar(60),
+                         cashierPassword varchar(60));
+
+
+//order history - primary key id
+CREATE TABLE tbl_orderHistory(order_id varchar(10) primary key,
+                         orderDate varchar(60),
+                         totalPrice varchar(100),
+                         cashierOnSession varchar(60));
+
+
+//order lists with order history - foreign key id
+CREATE TABLE tbl_orderContents(order_id varchar(10),
+                         productID varchar(60),
+                         orderQty varchar(10),
+                         productName varchar(100),
+                         price varchar(60),
+                         orderPrice varchar(60));
+
+//create cashier
+
+INSERT INTO tbl_cashierList(cashierName, registrationDate, cashierPassword) VALUES ('bear', DATETIME, md5('12345'))
+"INSERT INTO tbl_cashierList(cashierName, registrationDate, cashierPassword) VALUES (%s, DATETIME, md5(%s)")"
+
+//delete cashier
+DELETE FROM tbl_cashierlist WHERE id = ''
+
+//change cashier password
+UPDATE tbl_cashierlist SET cashierPassword = md5('') WHERE id = ''
+
+//login cashier
+SELECT cashierName, cashierPassword FROM tbl_cashierlist WHERE cashierName = 'bear' AND cashierPassword = md5('12345')
+"SELECT cashierName, cashierPassword FROM tbl_cashierlist WHERE cashierName = %s AND cashierPassword = md5(%s)"
+
+//get order history
+SELECT orderDate, totalPrice, cashierOnSession FROM tbl_orderhistory WHERE order_id = 'X277W47L';
+"SELECT orderDate, totalPrice, cashierOnSession FROM tbl_orderhistory WHERE order_id = %s"
+    //delete them
+DELETE FROM tbl_orderhistory WHERE id = 'BGAJE10P'
+"DELETE FROM tbl_orderhistory WHERE id = %s"
+
+//get order contents
+SELECT productID, orderQty, productName, price, orderPrice FROM tbl_ordercontents WHERE order_id = 'XYNG2EJY';
+"SELECT productID, orderQty, productName, price, orderPrice FROM tbl_ordercontents WHERE order_id = %s"
+    //delete them
+DELETE FROM tbl_ordercontents WHERE id = 'BGAJE10P'
+"DELETE FROM tbl_orderhistory WHERE id = %s"
+
+> add product (python code)
+
+"INSERT INTO tbl_student(productID, productName, price) VALUES (%s, %s, %s)"
+
+> enter product id check
+
+"SELECT * FROM `tbl_productlist` WHERE `productID` = 'XYZ'"
+
+> edit product price and name
+
+"UPDATE tbl_productlist SET productName = '%s', price = '%s' WHERE productID = '%s'"
